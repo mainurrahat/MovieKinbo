@@ -5,7 +5,8 @@ Users can browse movies, view details, add movies to the cart, remove items, del
 
 🚀 Live Demo
 
-👉  https://your-project-url.com
+👉  https://movie-kinbo.vercel.app/
+
 
 ⭐ Features
 🛒 Cart System (Context + Reducer Powered)
