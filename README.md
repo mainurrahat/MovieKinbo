@@ -1,16 +1,180 @@
-# React + Vite
+#🎬 CinemaHub – Movie Store 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+CinemaHub is a modern, responsive movie store web application built using React, Context API, useReducer, and Tailwind CSS v4.
+Users can browse movies, view details, add movies to the cart, remove items, delete all, and checkout smoothly with toast notifications.
 
-Currently, two official plugins are available:
+🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+👉  https://your-project-url.com
 
-## React Compiler
+⭐ Features
+🛒 Cart System (Context + Reducer Powered)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Add to cart
 
-## Expanding the ESLint configuration
+Remove a single movie
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Delete all movies
+
+Check out with the total price
+
+Real-time toast notifications
+
+🎥 Movie Management
+
+Browse movies
+
+Filter movies (optional if added)
+
+View detailed movie page
+
+Responsive movie cards
+
+
+Smooth transitions
+
+📱 Fully Responsive
+
+Mobile-first design
+
+Beautiful UI with Tailwind v4
+
+🏗️ Tech Stack
+Category	Tech
+Frontend	React (Vite)
+State Management	Context API + useReducer
+UI Framework	Tailwind CSS v4
+Components	Reusable & Modular
+Notifications	React-Toastify
+Icons	React Icons
+📂 Project Structure
+src/
+│
+
+├── Components/
+
+│   ├── Cinema/
+
+│   │   ├── CartDetails.jsx
+
+│   │   ├── MovieCard.jsx
+
+│   │   ├── MovieDetails.jsx
+
+│   │   ├── MovieList.jsx
+
+│   │   ├── Header.jsx
+
+│   │   ├── Footer.jsx
+
+│   │   └── Sidebar.jsx
+
+│
+├── Context/
+
+│   └── index.js
+
+│
+├── Data/
+
+│   └── Movies.js
+
+│
+├── Reducer/
+
+│   └── CartReducer.js
+
+│
+├── App.jsx
+
+├── main.jsx
+
+├── index.css
+
+└── App.css
+
+⚙️ State Management Flow (Context + Reducer)
+Reducer Actions
+
+ADD_TO_CART
+
+REMOVE_FROM_CART
+
+CLEAR_CART
+```
+Example: Remove Movie
+dispatch({
+  type: "REMOVE_FROM_CART",
+  payload: { id },
+});
+```
+```
+Example: Add Movie
+dispatch({
+  type: "ADD_TO_CART",
+  payload: movie,
+});
+```
+
+🏠 Home Page
+
+🎬 Movie Details
+
+🛒 Cart Modal
+
+🔧 Installation & Setup
+# Clone the repo
+```
+git clone https://github.com/mainurrahat/MovieKinbo
+```
+# Navigate to project
+```
+cd cinema-hub
+```
+# Install dependencies
+```
+npm install
+```
+
+# Run development server
+```
+npm run dev
+```
+ 
+🔥 Why Context + Reducer?
+useState	useReducer
+Simple	Complex logic
+Works locally, Centralized state
+No global sharing	Works with Context
+Not scalable,	Perfect for cart systems
+
+Using both together gives:
+
+Global state
+
+Predictable state updates
+
+Cleaner code
+
+No need for Redux
+
+🧪 Future Improvements
+
+Movie search & filter
+
+Wishlist system
+
+Auth (Login/Register)
+
+Backend movie API
+
+Payment gateway simulation
+
+🤝 Contributing
+
+Pull requests are welcome!
+Please open an issue to discuss major changes.
+
+📄 License
+
+MIT License © 2025 – Mainur Islam Rahat
