@@ -1,5 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-/* eslint-disable no-unused-vars */
 import React, { useContext, useState } from "react";
 import MovieDetailsModal from "./MovieDetailsModal";
 import movieContext from "../../Context/index";
@@ -22,10 +20,10 @@ const MovieCard = ({ movie }) => {
     setShowModal(true);
   };
 
-  const { cartData, setCartData } = useContext(movieContext);
+  const { state, dispatch } = useContext(movieContext);
 
   const handleAddToCart = (movie) => {
-    const found = cartData.find((item) => item.id === movie.id);
+    const found = state.cartData.find((item) => item.id === movie.id);
 
     if (found) {
       toast.info(`${movie.title} is already in the cart!`, {
@@ -39,8 +37,13 @@ const MovieCard = ({ movie }) => {
       return;
     }
 
-    setCartData((prevCartData) => [...prevCartData, movie]);
-
+    // setCartData((prevCartData) => [...prevCartData, movie]);
+    dispatch({
+      type: "ADD_TO_CART",
+      payload: {
+        ...movie,
+      },
+    });
     toast.success(`${movie.title} added to cart!`, {
       position: "top-right",
       autoClose: 3000,

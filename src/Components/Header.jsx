@@ -5,15 +5,17 @@ import sun from "../assets/sun.svg";
 import cart from "../assets/shopping-cart.svg";
 import CartDetails from "./Cinema/CartDetails";
 import movieContext from "../Context/index";
+// import ThemeToggle from "./ThemeToggle.jsx";
 
 const Header = () => {
   const [showCart, setShowCart] = useState(false);
-  const { cartData } = useContext(movieContext);
-  console.log(cartData);
+  const { state } = useContext(movieContext);
+  console.log(state.cartData);
   return (
     <header>
+      {/* <ThemeToggle /> */}
       {showCart && (
-        <CartDetails onClose={() => setShowCart(false)} cartItems={cartData} />
+        <CartDetails onClose={() => setShowCart(false)} cartItems={state.cartData} />
       )}
       <nav
         className="container flex it
@@ -50,9 +52,9 @@ const Header = () => {
               onClick={() => setShowCart(true)}
             >
               <img src={cart} width="24" height="24" alt="Cart" />
-              {cartData.length > 0 && (
+              {state.cartData.length > 0 && (
                 <span className="absolute top-4 right-4 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full">
-                  {cartData.length}
+                  {state.cartData.length}
                 </span>
               )}
             </a>
